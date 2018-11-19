@@ -3,7 +3,7 @@ module.exports = function main(inputs) {
     let result = [];
 
     inputs.forEach(element => {
-        if (result.find((x) => x.barcode === element.barcode) === undefined) {
+        if (!result.some((x) => x.barcode === element.barcode)) {
             let newElement = {}
             newElement.barcode = element.barcode
             newElement.name = element.name
